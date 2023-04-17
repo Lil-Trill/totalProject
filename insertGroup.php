@@ -15,6 +15,9 @@ require_once("./config.php");
  $connect->set_charset("utf8");
 
  //код запроса
+
+
+
  $sql = "INSERT INTO `groups`(`title`) VALUES ('$title')";
 
 //выполнение запроса

@@ -77,7 +77,12 @@
                  echo "<div>
                      $row[title]
                  </div>";
-             }
+             };
+
+            //  $titles = "SELECT `title` FROM `groups` WHERE 1";
+            //  for($titles as $value){
+            //     echo $value;
+            //  } 
         ?>
     </div>
     <div class="message">

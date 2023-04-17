@@ -1,4 +1,7 @@
 <?php
+
+use PSpell\Config;
+
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $age = $_POST['age'];
@@ -20,9 +23,7 @@ require_once("./config.php");
 
 //выполнение запроса
 $result = $connect->query($sql);
-if($result){
-    echo "<p>Данные о студенте добавленны</p>";
-    //редирект, переход на главную страничку
-    header("Location:index.php");
-} 
-else echo "<p>Ошибочка упс :(</p>";
+ 
+
+if($result) echo "Ok"; //редирект, переход на главную страничку
+else echo "Error 14f769hj9567";

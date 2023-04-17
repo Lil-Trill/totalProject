@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Клиент-серверное приложение</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
 </head>
 <body>
 <!-- action="insertStudent.php" method="POST" -->
-<form>
+<form id="form-insert-student">
 <input type="text" name="fname" id="fname" placeholder="Введите имя" required><br>
 <input type="text" name="lname" id="lname" placeholder="Введите фамилию" required><br>
 <input type="number" name="age" id="age" placeholder="Ваш возраст" required><br>
@@ -19,8 +21,10 @@
 <input type="submit" value="Добавить">
 </form>
 
+    <div class="content">
     <?php
-        require("./config.php");
+        require_once("./config.php");
+        require_once("./insertStudent.php");
         
         //подключение к БД
         $connect = new mysqli(HOST,USER,PASS,DB);
@@ -43,7 +47,10 @@
             </div>";
         }
     ?>
-    <div>
+    </div>
+    <div class="block"></div>
+
+    <div class="message">
 
     </div>
 </body>

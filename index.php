@@ -9,6 +9,9 @@
     <script defer src="./script.js"></script>
 </head>
 <body>
+
+
+
 <!-- action="insertStudent.php" method="POST" -->
 <form id="form-insert-student">
 <input type="text" name="fname" id="fname" placeholder="Введите имя" required><br>
@@ -20,12 +23,9 @@
 <label for="f">Женский</label><br>
 <input type="submit" value="Добавить">
 </form>
-
     <div class="content">
     <?php
         require_once("./config.php");
-        require_once("./insertStudent.php");
-        
         //подключение к БД
         $connect = new mysqli(HOST,USER,PASS,DB);
         if($connect->connect_error)
@@ -48,10 +48,40 @@
         }
     ?>
     </div>
-    <div class="block"></div>
 
+
+    <form id="form-insert-groups">
+        <input type="text" name="title" id="title" placeholder="Введите название группы" required><br>
+        <input type="submit" value="Добавить">
+    </form>
+
+    <div class="content_groups">
+        <?php
+             require_once("./config.php");
+             //подключение к БД
+             $connect = new mysqli(HOST,USER,PASS,DB);
+             if($connect->connect_error)
+                 exit("не ну это бан!!!!!!".connect_error);
+             
+             //устанавливаем кодировку привет
+             $connect->set_charset("utf8");
+     
+             //код запроса
+     
+             $sql = "SELECT * FROM `groups`";
+             //выполнить запрос
+             $result = $connect->query($sql);
+             //вывести результат
+             //цикл выполняется пока в row записываются картежи из БД
+             while($row = $result->fetch_assoc()){
+                 echo "<div>
+                     $row[title]
+                 </div>";
+             }
+        ?>
+    </div>
     <div class="message">
-
+        
     </div>
 </body>
 </html>

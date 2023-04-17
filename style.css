@@ -34,3 +34,12 @@
 .showMessage {
     transform: translateY(0);
 }
+
+.content_groups {
+    margin-top: 50px;
+    border: black solid 1px;
+}
+
+#form-insert-groups {
+    margin-top: 15px;
+}

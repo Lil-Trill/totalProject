@@ -7,8 +7,8 @@
     <title>Клиент-серверное приложение</title>
 </head>
 <body>
-
-<form action="insertStudent.php" method="POST">
+<!-- action="insertStudent.php" method="POST" -->
+<form>
 <input type="text" name="fname" id="fname" placeholder="Введите имя" required><br>
 <input type="text" name="lname" id="lname" placeholder="Введите фамилию" required><br>
 <input type="number" name="age" id="age" placeholder="Ваш возраст" required><br>

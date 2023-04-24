@@ -18,4 +18,11 @@ abstract class Core {
     public function get_body(){
         include "template/index.php";
     }
+
+    public function formatstr($str){
+        $str = trim($str);//трим удаляет пробелы из начала и конца строки
+        $str = stripslashes($str);//удаляет экранирование символов
+        $str = htmlspecialchars($str);//преобразует специальные символы в html-сущности
+        return $str;
+    }
 }

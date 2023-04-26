@@ -8,6 +8,9 @@ require_once("api/core.php");
 if(isset($_GET['option'])){
     $class = trim(strip_tags($_GET['option']));//очищаем его от HTML и PHP-теги и пробелы из начала и конца строки
 }
+elseif(isset($_POST['option'])){
+    $class = trim(strip_tags($_POST['option']));
+}
 else{
     $class='main';
 }

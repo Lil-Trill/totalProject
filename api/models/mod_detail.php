@@ -1,9 +1,9 @@
 <?php
 
 //создание подготавливаемого запроса
-$result = $this->connect->prepare("SELECT * FROM students WHERE student_id=?");
+$result = $this->connect->prepare("SELECT * FROM students WHERE student_id=? And age = ? and fname = ?");//prepare - подготовка, 
 //связываение параметров с метками
-$result->bind_param("i",$id);
+$result->bind_param("i",$id);//i - в пораметре обозначает тип данных, мы передаём id типа int('i')
 //выполнение запроса
 $result->execute();
 //получение данных
@@ -11,7 +11,7 @@ $rows = $result->get_result();
 
 if(!$rows) echo "<p>данных нет</p>";
 else{
-    echo "<p class='back'><a href='/totalProject'>back</a></p>";
+    echo "<p class='back'><a href='.'>back</a></p>";
     $myrow = $rows->fetch_assoc();
     echo "<div>
     $myrow[lname],$myrow[fname],$myrow[age]
